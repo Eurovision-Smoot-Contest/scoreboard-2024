@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Public</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+    <script src="public-client.js"></script>
+</head>
+<body>
+    <img style="display: none;" src="/bg_blue.png" alt="">
+    <video autoplay muted loop id="background">
+        <source src="/voting-background.mp4" type="video/mp4">
+    </video>
+    <div id="main">
+        <div id="jury">
+            <div class="content"></div>
+        </div>
+        <div id="score-second">
+            <div style="display: flex; width: 480px;"></div>
+        </div>
+        <div id="score-final">
+            <img src="/final-results-banner.png" alt="">
+            <div id="score-final-in"></div>
+        </div>
+    </div>
+</body>
+</html>

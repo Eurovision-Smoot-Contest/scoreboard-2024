@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jury</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+    <script src="jury-client.js"></script>
+</head>
+<body>
+    <video autoplay muted loop id="background">
+        <source src="/voting-background.mp4" type="video/mp4">
+    </video>
+    <div id="main">
+        <div id="host">
+
+        </div>
+        <div id="jury">
+            <div class="top">
+
+            </div>
+            <div class="bottom">
+                <h1 id="current-country"></h1>
+                <p id="nb-countries"></p>
+            </div>
+        </div>
+        <div id="points">
+            <div>
+                <span>1</span>
+            </div>
+            <div>
+                <span>2</span>
+            </div>
+            <div>
+                <span>3</span>
+            </div>
+            <div>
+                <span>4</span>
+            </div>
+            <div>
+                <span>5</span>
+            </div>
+            <div>
+                <span>6</span>
+            </div>
+            <div>
+                <span>7</span>
+            </div>
+            <div>
+                <span>8</span>
+            </div>
+            <div>
+                <span>10</span>
+            </div>
+            <div>
+                <span>12</span>
+            </div>
+        </div>
+        <div id="score-first">
+            <div class="score-out">
+                <div id="first-country-0" class="score">
+                    <img class="flag" src="" alt="">
+                    <span class="name"></span>
+                    <span class="recieved">10</span>
+                    <span class="current"></span>
+                </div>
+            </div>
+            <div class="score-out">
+                <div id="first-country-1" class="score">
+                    <img class="flag" src="" alt="">
+                    <span class="name"></span>
+                    <span class="recieved">8</span>
+                    <span class="current"></span>
+                </div>
+            </div>
+            <div class="score-out">
+                <div id="first-country-2" class="score">
+                    <img class="flag" src="" alt="">
+                    <span class="name"></span>
+                    <span class="recieved">7</span>
+                    <span class="current"></span>
+                </div>
+            </div>
+            <div class="score-out">
+                <div id="first-country-3" class="score">
+                    <img class="flag" src="" alt="">
+                    <span class="name"></span>
+                    <span class="recieved">6</span>
+                    <span class="current"></span>
+                </div>
+            </div>
+            <div class="score-out">
+                <div id="first-country-4" class="score">
+                    <img class="flag" src="" alt="">
+                    <span class="name"></span>
+                    <span class="recieved">5</span>
+                    <span class="current"></span>
+                </div>
+            </div>
+            <div class="score-out">
+                <div id="first-country-5" class="score">
+                    <img class="flag" src="" alt="">
+                    <span class="name"></span>
+                    <span class="recieved">4</span>
+                    <span class="current"></span>
+                </div>
+            </div>
+            <div class="score-out">
+                <div id="first-country-6" class="score">
+                    <img class="flag" src="" alt="">
+                    <span class="name"></span>
+                    <span class="recieved">3</span>
+                    <span class="current"></span>
+                </div>
+            </div>
+            <div class="score-out">
+                <div id="first-country-7" class="score">
+                    <img class="flag" src="" alt="">
+                    <span class="name"></span>
+                    <span class="recieved">2</span>
+                    <span class="current"></span>
+                </div>
+            </div>
+            <div class="score-out">
+                <div id="first-country-8" class="score">
+                    <img class="flag" src="" alt="">
+                    <span class="name"></span>
+                    <span class="recieved">1</span>
+                    <span class="current"></span>
+                </div>
+            </div>
+        </div>
+        <div id="score-second">
+            <div style="display: flex; width: 480px;"></div>
+        </div>
+        <div id="score-final">
+            <img src="/jury-results-banner.png" alt="">
+            <div id="score-final-in"></div>
+        </div>
+    </div>
+</body>
+</html>

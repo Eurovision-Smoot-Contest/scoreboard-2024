@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Configuration</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="config-client.js"></script>
+    <style>
+        h1, h2 {
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+        table, th, td {
+            border: black 1px solid;
+            border-collapse: collapse;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        table {
+            max-width: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .country-name {
+            position: relative;
+        }
+        .country-name::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-image: var(--flag);
+            background-size: cover;
+            background-position: center;
+        }
+        .country-name::after {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            content: var(--name);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, .75);
+        }
+        input[type=number] {
+            font-size: 1em;
+            width: 50px;
+        }
+        input[type=submit] {
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 2em;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Configuration des points</h1>
+    <form action="/config/update">
+        <h2>Jury</h2>
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>10</th>
+                <th>12</th>
+            </tr>
+            </thead>
+            <tbody id="jury-body">
+            </tbody>
+        </table>
+        <br>
+        <table>
+            <thead>
+            <tr class="country-head">
+                <th>Nom</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="jury-total">
+                <th>Total</th>
+            </tr>
+            </tbody>
+        </table>
+        <h2>Public et Total final</h2>
+        <table>
+            <thead>
+            <tr class="country-head">
+                <th>Nom</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="public-points">
+                <th>Points</th>
+            </tr>
+            <tr id="public-total">
+                <th>Total</th>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <input type="submit" value="Mettre à jour">
+    </form>
+</body>
+</html>
