@@ -125,19 +125,19 @@
     font-size: 25px;
     font-family: "Penny Lane", sans-serif;
     font-weight: bold;
-    padding-top: 3px;
     transition: 1s ease-in-out left;
 }
 #points > div:last-child > span {
     color: var(--pink);
     background-color: var(--yellow);
+    top: -5px;
 }
 #points > div:last-child > span::after {
     content: "";
     position: absolute;
     width: 40px;
     height: 7px;
-    bottom: 3px;
+    bottom: -5px;
     background-color: var(--pink);
 }
 
@@ -190,7 +190,6 @@
     font-family: "Penny Lane", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
-    margin-top: 3px;
     z-index: 0;
 }
 .score > .name {
@@ -201,9 +200,10 @@
     color: white;
 }
 .score > .recieved {
+    display: flex;
+    justify-content: center;
     color: var(--pink);
-    justify-content: end;
-    margin-right: 15px;
+    padding-left: 35px;
     left: 10px;
     transition: left 1s ease-in-out;
 }
@@ -212,16 +212,16 @@
     content: "";
     width: 85px;
     height: 50px;
-    top: -3px;
     left: 15px;
     background-image: url("/bg_yellow.png");
     background-size: cover;
     z-index: -1;
 }
 .score > .current {
+    display: flex;
     color: white;
-    justify-content: end;
-    margin-right: 10px;
+    justify-content: center;
+    padding-left: 25px;
     transition: left .5s ease-in-out;
 }
 .score > .current::before {
@@ -229,7 +229,6 @@
     content: "";
     width: 85px;
     height: 50px;
-    top: -3px;
     left: 0;
     background-image: url("/bg_pink.png");
     background-size: cover;
@@ -269,7 +268,6 @@
     font-family: "Penny Lane", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
-    padding-top: 3px;
     background-color: var(--yellow);
     transform: translateX(-100%);
     transition: transform .25s linear, color .5s ease-in-out, opacity .25s ease-in-out;
@@ -323,7 +321,7 @@
     font-family: "Penny Lane", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 .final-score > .place, .final-score > .points {
     justify-content: center;
