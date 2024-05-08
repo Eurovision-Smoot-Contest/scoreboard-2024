@@ -49,15 +49,20 @@ const POINTS = [1, 2, 3, 4, 5, 6, 7, 8, 10, 12];
             .css("transition", "width 1.5s ease-in-out, top 1s ease-in-out")
             .css("width", 0);
         $("#score-second .recieved").css("left", "85px");
-        for (const country of score) {
-            $(`#second-country-${country.id} .current`).text(country.points);
-        }
         sortFullLeaderboard();
     }
 
     function loadJury() {
         const jury = data.juries.shift();
         currentJury = jury;
+        const points = jury.points;
+        for (let i = 0; i < 9; i++) {
+            const country = points[i];
+            addScore(country, POINTS[i])
+        }
+        for (const country of score) {
+            $(`#second-country-${country.id} .current`).text(country.points);
+        }
         const currentNb = juriesNb - data.juries.length;
         $("#current-country").text(jury.jury.name);
         let th = "th";
@@ -124,7 +129,6 @@ const POINTS = [1, 2, 3, 4, 5, 6, 7, 8, 10, 12];
                 elt.text(POINTS[i]);
                 if (i !== 9) {
                     elt.css("left", "10px");
-                    addScore(country, POINTS[i]);
                 }
             }
             await delay(1500);
@@ -155,12 +159,13 @@ const POINTS = [1, 2, 3, 4, 5, 6, 7, 8, 10, 12];
         await delay(1);
         elt.css("transform", "translateX(0)");
         await delay(250);
+        addScore(target, 12);
+        $(`#second-country-${target} .current`).text(getScore(target));
         elt.css("color", "var(--pink)");
         await delay(1000);
         elt.css("opacity", 0);
         await delay(250);
         elt.remove();
-        addScore(target, 12);
         sortFullLeaderboard();
         if (data.juries.length === 0) notEnd = false;
     }
