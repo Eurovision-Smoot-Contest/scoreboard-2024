@@ -33,6 +33,35 @@ function indexOfJury(juryId) {
     return null;
 }
 
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+function randomArray(length, target) {
+    const max = Math.floor(target / length);
+    const res = [];
+    let current = target;
+    for (let i = 0; i < length - 1; i++) {
+        let points = target;
+        while (points >= current) points = randomNumber(0, max);
+        res.push(points);
+        current -= points;
+    }
+    res.push(current);
+    shuffle(res);
+    return res;
+}
+
+function shuffle(array) {
+    let currentIndex = array.length;
+    while (currentIndex !== 0) {
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+}
+
 app.use(cookieParser());
 app.use(express.static("src"));
 app.use(express.static("public"));
@@ -71,6 +100,28 @@ app.get("/config/update", (req, res) => {
         }
     }
     res.redirect("/config");
+});
+
+app.get("/config/random", (req, res) => {
+    if (req.cookies.password !== PASSWORD) {
+        res.redirect("/");
+    } else {
+        for (let i = 0; i < DATA.juries.length; i++) {
+            const temp = COUNTRIES.filter(() => true);
+            const points = [];
+            for (let i = 0; i < 10; i++) {
+                const index = randomNumber(0, temp.length);
+                points.push(temp[index].id);
+                temp.splice(index, 1);
+            }
+            DATA.juries[i].points = points;
+        }
+        const randomPoints = randomArray(COUNTRIES.length, 696);
+        for (let i = 0; i < COUNTRIES.length; i++) {
+            DATA.public[COUNTRIES[i].id] = randomPoints[i];
+        }
+        res.redirect("/config");
+    }
 });
 
 http.listen(PORT, () => {

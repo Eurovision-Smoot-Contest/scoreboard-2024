@@ -60,6 +60,8 @@
             font-size: 2em;
             padding: 10px 20px;
             cursor: pointer;
+            border-radius: 25px;
+            border: none;
         }
     </style>
 </head>
@@ -116,7 +118,11 @@
             </tbody>
         </table>
         <br>
-        <input type="submit" value="Mettre à jour">
+        <input style="background-color: lightgreen;" type="submit" value="Mettre à jour">
+    </form>
+    <br>
+    <form action="/config/random">
+        <input style="background-color: red;" type="submit" value="Random">
     </form>
 </body>
 </html>
