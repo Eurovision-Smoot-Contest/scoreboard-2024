@@ -38,7 +38,7 @@ function randomNumber(min, max) {
 }
 
 function randomArray(length, target) {
-    const max = Math.floor(target / length);
+    const max = Math.floor(target / (length/2));
     const res = [];
     let current = target;
     for (let i = 0; i < length - 1; i++) {
